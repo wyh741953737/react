@@ -1,6 +1,6 @@
 const config = {
-  projectName: 'kaola',
-  date: '2019-2-26',
+  projectName: 'zm_cloud',
+  date: '2019-2-27',
   designWidth: 750,
   deviceRatio: {
     '640': 2.34 / 2,

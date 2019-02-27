@@ -1,8 +1,8 @@
 {
-  "name": "kaola",
+  "name": "zm_cloud",
   "version": "1.0.0",
   "private": true,
-  "description": "网易考拉React小程序",
+  "description": "cloud",
   "scripts": {
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
@@ -36,7 +36,6 @@
     "@types/webpack-env": "^1.13.6",
     "@tarojs/plugin-babel": "1.2.13",
     "@tarojs/plugin-csso": "1.2.13",
-    "@tarojs/plugin-sass": "1.2.13",
     "@tarojs/plugin-uglifyjs": "1.2.13",
     "@tarojs/webpack-runner": "1.2.13",
     "babel-plugin-transform-class-properties": "^6.24.1",
