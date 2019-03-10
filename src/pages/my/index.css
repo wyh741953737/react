@@ -1,0 +1,154 @@
+.user-page{
+  min-height: 100vh;
+  background-color: rgb(248, 245, 245);
+}
+.to-login {
+        width: 100%;
+        /* border: 1px solid black; */
+        height: 250rpx;   
+        display: flex;  
+        box-sizing: border-box;
+        align-items: center;
+        background-image: url(../../assets/user/bg.jpg);
+}
+.avator_image{
+   width: 150rpx;
+   height: 150rpx;
+    border-radius: 150rpx;
+    margin-left: 34rpx;
+    background-color: pink;
+}
+.avator_image_avator{
+    max-width: 100%;
+    max-height: 100%;
+}
+.right {       
+          font-size: 30rpx;
+          width:  150rpx;
+          height:150rpx;
+          line-height: 75rpx;
+          margin-left:20rpx;
+}
+.right_username{
+    height: 70rpx;
+}
+.right_usertype{
+    font-size: 28rpx;
+    color: grey;
+}
+
+.myorder_list{
+    height: 105rpx;
+    line-height: 105rpx;
+    font-size: 32rpx;
+    padding: 0 32rpx;
+    background-color: #fff;
+    /* border:1px solid red; */
+}
+.myorder_list_item{
+    float: left;
+}
+.myorder_list_more{
+    float: right;
+    font-size: 30rpx;
+    color: grey;
+    padding: 0 12rpx 0 ;
+}
+.border_devide{
+  height: 1px;
+  background: #dbdbdb;
+  transform:scaleY(0.5);
+  }
+.order_items{
+ 
+  height: 140rpx;
+  display: flex;
+  margin-top: 3rpx;
+  /* border: 1px solid yellow; */
+  background-color: #fff;
+}
+.order_content{
+  width: 20%;
+  height: 140rpx;
+ /* border:1px solid black; */
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 25rpx;
+}
+.order_img{
+  height: 60rpx;
+  width: 60rpx;
+  /* border: 1px solid blue; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.order_img_img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.order_info{
+  height:44rpx;
+  line-height: 44rpx;
+  /* border: 1px solid red; */
+  font-size: 24rpx;
+}
+.others{
+
+  /* height: 578rpx; */
+  /* border: 1px solid red; */
+  padding-top: 24rpx;
+
+}
+.comp-home-title__link-img{
+  width: 17rpx;
+  height:18rpx;
+  color: gray;
+}
+.clearfloat{
+  height: 0;
+  clear: both;
+}
+
+
+
+
+
+
+
+
+          
+
+
+          .order-page {
+            min-height: 100vh;
+            background-color: #f9f9f9;
+           }
+            .toggleType {
+              background-color: #fff;
+              padding-top: 20px;
+              padding-bottom: 20px;
+                 }
+           .item {
+                display: inline-block;
+                width: 20%;
+                text-align: center;
+                font-size: 24px;
+                font-weight: 200;
+                color: #666;
+           }
+                .active {
+                  color: #ec5d75;
+                  font-weight: 400;
+           }
+            .empty {
+              margin-top: 330px;
+              height: 178px;
+              background: url('http://static-r.msparis.com/uploads/9/6/968b64edb282160e7da5dd184154bbe7.png')
+                no-repeat center;
+              background-size: contain;
+            }
+            .card {
+                margin-top: 410px;
+              }
+      
+          

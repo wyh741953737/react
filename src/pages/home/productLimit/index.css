@@ -1,0 +1,59 @@
+
+.home-product__swiper{
+    height:1650rpx;
+    width: 100%;
+   /* background-color: pink; */
+}
+.message_show{
+    font-size: 26rpx;
+    color: grey;
+    text-align: center;
+    height: 80rpx;
+    background-color: rgb(247, 248, 248);
+    line-height: 80rpx;
+}
+
+
+.time_limit_wrap{
+    white-space: nowrap;
+    display: flex;
+    height: 120rpx;
+}
+.scrollview{
+ width: auto;
+height:100rpx;
+min-width: auto;
+}
+
+.tims{
+    /* width: 190rpx; */
+    text-align: center;
+    font-size: 24rpx; 
+    line-height: 50rpx;
+    min-width: 20%;
+    box-sizing: border-box;   
+}
+.item_name{
+    color:grey;
+}
+.ff{
+    background-color: rgb(253, 49, 66);
+    color: white;
+}
+.time_limt_item_id{
+    height: 50rpx;
+    font-weight:900;
+    font-size: 32rpx; 
+}
+.message{
+    height: 60rpx;
+    /* border: 1px solid red; */
+    font-size: 26rpx;
+    line-height: 60rpx;
+    padding-left: 25rpx;
+    color: grey;
+
+}
+
+ 
+

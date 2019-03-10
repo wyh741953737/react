@@ -1,0 +1,15 @@
+
+
+/**
+ * // NOTE  RN Swiper 的 indicator 位置与 H5、小程序不同
+ * 这边通过 height + 负 margin 实现一致样式，或者自己实现 indicator 也不难
+ */
+ .home-banner__swiper{
+   height:320rpx;
+ }
+.home-banner__swiper-item-img{
+  width: 100%;
+  height: 100%;
+}
+  
+
