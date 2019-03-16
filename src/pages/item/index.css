@@ -313,5 +313,43 @@ margin: 30rpx;
 .imgg{
    width: 100%;
    height: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+.message_show{
+    font-size: 26rpx;
+    color: grey;
+    text-align: center;
+    height: 80rpx;
+    background-color: rgb(247, 248, 248);
+    line-height: 80rpx;
+}
+.tabbar{
+    height: 90rpx;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    font-size: 22rpx;
+    margin-bottom: 0;
+    z-index: 1000;
+    text-align: center;
+    background-color: #fff;
+}
+.home,.car,.like{
+    width: 14%;    
+}
+.home_icon{
+    width: 40rpx;
+    height: 40rpx;
+    padding-top: 10rpx;
+}
+.tocar,.tobuy{
+    background-color: rgb(255, 107, 132);
+    color:white;
+    width: 29%;
+    line-height: 90rpx;
+    font-size: 32rpx;
+}
+.tobuy{
+    background-color: red;
 }

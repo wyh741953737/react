@@ -42,7 +42,7 @@ margin-left: 160rpx;
    height: 830rpx;
     display: flex;
     flex-wrap: wrap;
-  border: 1px solid black;
+  /* border: 1px solid black; */
    }
   .recommend-total_height{
     height:269rpx;
@@ -51,13 +51,13 @@ margin-left: 160rpx;
     margin-left: 17rpx;
     display: flex;
     background-color: white;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   
   .image-wrap{ 
     width: 240rpx;
     height: 269rpx;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
   
   }
   .recommend-img{
@@ -91,7 +91,7 @@ margin-left: 160rpx;
    margin-top: 20rpx;
   line-height: 34rpx;
   color: black;
-  border: 1px solid brown;
+  /* border: 1px solid brown; */
   }
   .recommend-title{
     display: -webkit-box;
@@ -113,7 +113,7 @@ margin-left: 160rpx;
 }
   .active{
     height: 60rpx;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     font-size: 20rpx;
    align-items: center;
@@ -133,7 +133,6 @@ margin-left: 160rpx;
   .go-purchase{
     display: flex;
     height: 55rpx;
-    border: 1px solid blue;
     align-items: center;
   }
   .recommend-product_price{

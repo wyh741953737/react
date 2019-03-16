@@ -32,17 +32,17 @@ export default class OrderList extends Component {
           image:'../../assets/user/ping.png',
         },
       ],
-      activeTypeIndex: 0,
+      activeTypeindex: '',
     };
   }
 
   config = {
     navigationBarTitleText: '订单',
   };
-
-  componentWillMount = () => {
+  componentWillMount = (ev) => {
+    console.log(this)
     this.setState({
-      activeTypeIndex: this.$router.params.id,
+      activeTypeindex: this.$router.params.id,
     });
     
   };
@@ -52,20 +52,20 @@ export default class OrderList extends Component {
       url: '../../pages/timelimit/index?id=2'
     })
     this.setState({
-      activeTypeIndex: e.currentTarget.dataset.id,
+      activeTypeindex: e.currentTarget.dataset.id,
     });
    console.log(e.currentTarget.dataset.id)
   };
 
   render() {
-    const { orderType, activeTypeIndex } = this.state;
+    const { orderType,  activeTypeindex } = this.state;
     return (
       <View className="order-page">
         <View className="toggleType">
           {orderType.map((item, index) => (
             <View
               key={index}
-              className={activeTypeIndex == index ? 'active item' : 'item'}
+              className={ activeTypeindex == item.id ? 'active item' : 'item'}
               data-id={item.id}
               onClick={this.toggleActiveType}
             >

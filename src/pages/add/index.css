@@ -1,0 +1,105 @@
+.wrap{
+    width: 100%;
+    height: 770rpx;
+    z-index: 1000;
+    border: 1px solid red;
+    bottom: 0;
+    position:absolute;
+    box-sizing: border-box;
+  
+}
+.pic{
+    display: flex;
+}
+.image{
+    width: 300rpx;
+    height: 300rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+    margin: 30rpx;
+}
+.image-url{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10rpx;
+}
+.price{
+   
+    height: 360rpx;
+
+}
+.price-wrap,.price-count,.price-chose{
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.price-wrap{
+   
+    font-size: 38rpx;
+    color: red;
+}
+.price-count{
+  
+    font-size: 30rpx;
+    color: grey;
+}
+.price-chose{
+  
+    font-size: 30rpx;
+}
+.color_and_count{
+
+}
+.color{
+    margin: 20rpx;
+    font-size: 30rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+  
+    background-color: rgb(228, 228, 228);
+    
+}
+.count{
+    display: flex;
+   
+    font-size: 28rpx;
+    margin: 20rpx;
+}
+.count_button{
+    display: flex;
+    border:1px solid red;
+    width: 200rpx;
+    text-align: center;
+    box-sizing: border-box;
+  margin-left: 360rpx;
+}
+.count_less,.count_more{
+    width: 60rpx;
+    border: 1px solid white;
+    background-color: rgb(228, 228, 228);
+}
+.count_number{
+    width: 80rpx;
+    background-color: rgb(228, 228, 228);
+}
+.count_comfirm{
+    background-color: rgb(236, 95, 59);
+    color: white;
+    height: 90rpx;
+    width: 90%;
+    border-radius: 90rpx;
+    text-align: center;
+   line-height: 90rpx;
+    
+   
+}
+.comfirm-wrap{
+    height: 110rpx;
+    background-color: rgb(255, 251, 251);
+    z-index: 1200;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

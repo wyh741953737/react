@@ -15,11 +15,19 @@ wx.cloud.init({
 class App extends Component {
   config = {
     pages: [
-      'pages/item/index',
+      'pages/car/index',
       'pages/home/home', 
+      'pages/addtocar/index',
+      'pages/add/index',
+   
+    
+    
+      'pages/province/index',
+      'pages/item/index',
+    
      'pages/home/productLimit/index',
      
-     'pages/timelimit/index' ,
+      // 'pages/timelimit/index' ,
    
       
 
@@ -60,7 +68,7 @@ class App extends Component {
         selectedIconPath: "./assets/tab-bar/message-active.png",
         text: "消息"
       },{
-        pagePath: "pages/home/home",
+        pagePath: "pages/car/index",
         iconPath: "./assets/tab-bar/cart.png",
         selectedIconPath: "./assets/tab-bar/cart-active.png",
         text: "购物车"
@@ -71,7 +79,13 @@ class App extends Component {
         text: "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
+
 }
   componentDidMount () {
     

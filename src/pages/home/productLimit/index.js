@@ -126,6 +126,15 @@ time: '24:00',
       category:res.data
     })
   }
+  // handlenaviga=(ev)=>{
+  //   var that=this;
+  //   var e=ev.currentTarget.dataset._id;
+  //   this.$preload('_id', ev.currentTarget.dataset._id)
+  //   console.log(e)
+  //   Taro.navigateTo({
+  //     url:`/pages/item/index`
+  //  })
+  // }
   render() {
     const { productsTotal, currentIndex, lists,ids,category } = this.state;
     console.log(currentIndex)
@@ -159,12 +168,12 @@ time: '24:00',
                       <Swiper
                         className='home-product__swiper'
                         circular
-                        onChange={this.handleSwiperChange}
+                        // onChange={this.handleSwiperChange}
                         indicatorActiveColor='rgb(178, 42, 49)'>
                                   {
                                     mapSwiperArray.map((index) => (
                                       <SwiperItem className="home-product_swiperitem">
-                                        <Product  category={category}/>
+                                    <View onClick={this.handlenaviga}>    <Product  category={category} /></View>
                                       </SwiperItem>
                                     ))
                                   }

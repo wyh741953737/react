@@ -8,24 +8,26 @@ export default class Product extends Component {
   static defaultProps = {
     category: []
   }
-handlePrevent=()=>{
-  Taro.showToast({
-    title: '目前只可点击底部推荐商品',
-    icon: 'none'
-  })
- 
-}
+  // handlenaviga=(ev)=>{
+  //   var that=this;
+  //   var e=ev.currentTarget.dataset._id;
+  //   this.$preload('_id', ev.currentTarget.dataset._id)
+  //   console.log(e)
+  //   Taro.navigateTo({
+  //     url:`/pages/item/index`
+  //  })
+  // }
   render() {
     const { category } = this.props
     return (
       <View className='home-product'
-      onClick={this.handlePrevent}
+      
       >
         {
           category
           .map((item, index) => (
         <View className='wrap'>
-              <View   key={index}  className='recommend-total_height'  >
+              <View   key={index}  className='recommend-total_height' >
                     <View className="image-wrap"><Image className='recommend-img'  src={item.url}  /></View>       
                     <View className="recommend_price"> 
                              <View className="recommend-product_title"><Text className="recommend-title"  >{item.title}</Text></View>

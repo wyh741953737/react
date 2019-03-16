@@ -43,34 +43,23 @@ export default class User extends Component {
               image:'../../assets/user/ping.png'
             },
           ],
-          activeTypeIndex: 0,
+        
         };
       }
     config = {
       navigationBarTitleText: '我的',
     }
-    
-  componentWillMount = () => {
-    this.setState({
-      activeTypeIndex: this.$router.params.id,
-    });
-  };
-
-  toggleActiveType = e => {
-    this.setState({
-      activeTypeIndex: e.currentTarget.dataset.id,
-    });
-  }
   seemore=()=>{
-    console.log(e)
    Taro.navigateTo({
      url:'../order_list/index?id=0'
-
    })
   }
-  allList=(e)=>{
+  allList=(ev)=>{
+    console.log(ev)
+    var id=ev.currentTarget.dataset.id
+    console.log(id)
     Taro.navigateTo({
-      url:'../order_list/index?id=0'
+      url:'../order_list/index?id='+id
     })
   }
 render(){
@@ -100,7 +89,7 @@ render(){
                                     <View className="order_items">
                                    {
                                      orderType.map((item,index)=>(
-                                      <View className="order_content" onClick={this.allList}>
+                                      <View className="order_content" data-name={item.name} data-id={item.id} onClick={this.allList}>
                                       <View className='order_img'><Image className='order_img_img' src={item.image}/></View>
                                       <View className='order_info'>{item.name}</View>
                                    </View>

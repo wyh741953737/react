@@ -96,7 +96,12 @@ constructor(){
    
     })
   }
-  handlenaviga=()=>{
+  handlenaviga=(ev)=>{
+    var that=this;
+    var e=ev.currentTarget.dataset._id;
+    this.$preload('_id', ev.currentTarget.dataset._id)
+    console.log(e)
+
     Taro.navigateTo({
       url:`/pages/item/index`
    })
@@ -135,7 +140,7 @@ constructor(){
 <View className="recommend-product">
          
 {category.map((item, index) => (               
-  <View   key={index}  className='recommend-total_height' data-price={item.price} onClick={this.handlenaviga.bind(this)}  >
+  <View   key={index}  className='recommend-total_height' data-_id={item._id} onClick={this.handlenaviga.bind(this)}  >
      <View className="image-wrap"><Image className='recommend-img'  src={item.url}  /></View>       
      <View className="recommend_price"> 
              <View className="recommend-product_title"><Text className="recommend-title"  >{item.title}</Text></View>
