@@ -15,29 +15,16 @@ wx.cloud.init({
 class App extends Component {
   config = {
     pages: [
-      'pages/car/index',
+     
       'pages/home/home', 
-      'pages/addtocar/index',
-      'pages/add/index',
-   
-    
-    
+      'pages/welcome/index',
+      'pages/car/index',
+      'pages/add/index', 
       'pages/province/index',
       'pages/item/index',
-    
      'pages/home/productLimit/index',
-     
-      // 'pages/timelimit/index' ,
-   
-      
-
-     
-     
-
-     
       'pages/order_list/index' ,
       'pages/my/index',   
-       
        'pages/login/index'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
     ],
     window: {

@@ -172,7 +172,7 @@ time: '24:00',
                         indicatorActiveColor='rgb(178, 42, 49)'>
                                   {
                                     mapSwiperArray.map((index) => (
-                                      <SwiperItem className="home-product_swiperitem">
+                                      <SwiperItem className="home-product_swiperitem" key={index}>
                                     <View onClick={this.handlenaviga}>    <Product  category={category} /></View>
                                       </SwiperItem>
                                     ))

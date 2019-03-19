@@ -1,10 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Swiper, SwiperItem, Image } from '@tarojs/components'
 import './index.css'
+import Cart from '../car/cart-module'
 import Share from '../../assets/user/share.png'
 import arrowRight from '../../pages/home/flash-sale/arrow-right.png'
 import Category from '../home/category';
 const db = wx.cloud.database()
+const cart = new Cart();
 export default class Product_info extends Component {
   config = {
     navigationBarTitleText: '商品详情',
@@ -16,12 +18,10 @@ export default class Product_info extends Component {
       productCount: 1,
       category: [],
       currentIndex: 0,
-      likeid:'',
-      collected:{}
+     
     }
   }
   componentWillMount() {
-    
     db.collection('category')
     .where({
       _id: this.$router.preload._id
@@ -32,22 +32,7 @@ export default class Product_info extends Component {
         category: res.data
       })
     })
-    this.setState({
-      likeid:this.$router.preload._id
-    })
-    //第一次进入判断是否存在本地存储以及是否收藏
-    var likesCollect=Taro.getStorage({key:'likesCollect'})
-    if(likesCollect){//如果likesCollect存在，代表以前收藏过或者以前取消过收藏
-      var likesCollect=likesCollect[this.$router.preload._id];
-      this.setState({
-        collected:likesCollect
-      })
-    }else{//第一次进来根本不存在数据
-      var likesCollect={}
-      likesCollect[this.$router.preload._id]=false//将唯一id放到newsCollect中，然后默认false
-      Taro.setStorage({key:'likesCollect',data:'likesCollect'})
-    }
-  }
+}
   handleClick = () => {
     Taro.navigateTo({
       url: ``
@@ -80,26 +65,12 @@ export default class Product_info extends Component {
     })
   }
   like = () => {
-  console.log(this.state.likeid+'dddd')
-    var likesCollect=Taro.getStorage({key:'likesCollect'})//根据key获取点赞数据，所有数据的集合，我们只要其中某一项
-    var likeCollect=likesCollect[this.state.likeid];//likeCollect=在收藏夹中的id某一项，获取到了某一项
-    likeCollect=!likeCollect;  //点击收藏或者取消
-    likesCollect[this.state.likeid]=likeCollect//当前的这条数据交给从在收藏中获取的和id对应的那条数据，更新数
-    Taro.setStorage({key:'likesCollect',data:'likesCollect'})//把整体存一下。不能存单独的
-    this.setState({
-      collected:likesCollect
-    })
-    Taro.showToast({
-      title: likesCollect[this.state.likeid] ? '收藏成功' : '取消成功',
-      icon: 'success',
-      duration: 600,
-      mask: true
-    })
-    Taro.showShareMenu({
-      withShareTicket: true
-    })
+    const { category } = this.state;
+    // console.log(category)
+    // console.log(category[0])//输出整条数据
+    if(!category[0]) return false; 
+    cart.colPro(category[0])
 
-    
   }
   render() {
     const { category } = this.state;
@@ -138,7 +109,7 @@ export default class Product_info extends Component {
                 <View>购物车</View>
               </View>
               <View className='car' onClick={this.like}>
-                <Image className='home_icon' src='../../assets/tab-bar/shoucangle.png'></Image>
+                <Image className='home_icon' src='./image/select.png'></Image>
                 <View>收藏</View>
               </View>
               <View className='tocar' data-_id={item._id} onClick={this.navigategoodlist}>加入购物车</View>

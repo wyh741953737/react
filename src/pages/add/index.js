@@ -13,7 +13,6 @@ export default class Add extends Component {
         }
     }
     componentDidMount() {
-        // console.log(this.$router.preload._id)
         db.collection('category')
             .where({
                 _id: this.$router.preload._id
@@ -23,24 +22,25 @@ export default class Add extends Component {
                 this.setState({ category: res.data })
             })
     }
-    comfirm = () => {
-        // let _id=this.$router.preload._id;
-        this.addToCart(_id)  
+    less=()=>{
+        if(this.state.productCount>1){
+            this.setState({
+                productCount:productCount--
+            })
+        }
     }
-    addToCart = (id) => {
-         const { category, productCount } = this.state;
+    more=()=>{
+     const productCount=this.state.productCount++
+       this.setState({
+           productCount:productCount
+       })
+    }
+    comfirm = () => {
+        const { category, productCount } = this.state;
+         console.log(category)//打印出对象的对象
          console.log('加入购物车了吗')
-         var temObj = {}//一个对象
-         let keys=['_id','title','url','price']//表示temobj中的属性,一个商品的全部信息在category中，keys就是要从category中摘取的数据。
-        //    console.log(keys[0])
-        //  for( keys in category){//读取category中的数据，方法：遍历keys，根据每个key去this.data.category中读取相应的值
-        //  if(keys.indexOf(key) >=0){//如果key存在 就把他读取出来，并且装载到temobj           
-        //      temObj[key]= this.data.category[key];
-        //     }
-        // }         
-            //将temObj加入到购物车   
-            Taro.setStorage({ key:"category_id",  data:"keys" })    
-         cart.add(category, productCount)
+        if(!category[0]) return false; 
+         cart.add(category[0], productCount)
     }
     render() {
         const { category } = this.state;
@@ -59,14 +59,14 @@ export default class Add extends Component {
                             </View>
                         </View>
                         <View className='color_and_count'>
-                            <View> <Text className='color'>已经选择{this.state.productCount}件</Text></View>
+                            <View> <Text className='color'>已经选择 {this.state.productCount} 件</Text></View>
                         </View>
                         <View className='count'>
                             <View className='count_text'>购买数量</View>
                             <View className='count_button'>
-                                <View className='count_less' >-</View>
+                                <View className='count_less' onClick={this.less} >-</View>
                                 <View className='count_number'>{this.state.productCount}</View>
-                                <View className='count_more'>+</View>
+                                <View className='count_more'  onClick={this.more}>+</View>
                             </View>
                         </View>
                         <View className='comfirm-wrap'>  <View className='count_comfirm' onClick={this.comfirm}>确定</View></View>

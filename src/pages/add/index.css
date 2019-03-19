@@ -53,10 +53,7 @@
     margin: 20rpx;
     font-size: 30rpx;
     height: 60rpx;
-    line-height: 60rpx;
-  
-    background-color: rgb(228, 228, 228);
-    
+    line-height: 60rpx;    
 }
 .count{
     display: flex;

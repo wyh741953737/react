@@ -1,27 +1,24 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-// import Product from './hasproduct/index'
-
+ import Product from './hasproduct/index'
+ import noProduct from './noproduct/index'
+import Cart from './cart-module'
 
 import './index.css'
+import Category from '../home/category';
 
-
+const cart = new Cart();
 export default class Car extends Component {
- 
-   
-       constructor(){
-         super();
-         this.state={
-             _storageKeyName:'_id'
-         }
-   }
-
-   getCart=(e)=>{    
-    var res=Taro.getStorageSync({key:'_id'});
-    console.log(res)
+state={
+    cartData:[]
 }
-//  componentWillMount(){
-//   var cartData=cart.getCartDataFromLocal();
+ componentWillMount(){
+  var cartData=Taro.getStorageSync('product')
+  this.setState({
+      cartData:cartData
+  })
+//   console.log(cartData)
+//   console.log(cartData.length)
 //    var countsInfo=cart.getCartTotalCounts(true);
 //    cal=this._calcTotalAccountAndCounts(data)
 //    this.setState({
@@ -30,7 +27,11 @@ export default class Car extends Component {
 //        selectedTypeCounts:cal.selectedTypeCounts,
 //         account:cal.account
 //    })
-//       }
+      }
+    //   getCartDataFromLocal = () => {
+    //     var res = Taro.getStorageSync('product') || [];
+    //     return res;
+    //   }
 //        _calcTotalAccountAndCounts=(data)=>{
 //            var len=data.length
 //            account=0//总价格
@@ -55,12 +56,14 @@ export default class Car extends Component {
   
 //     }
       render(){
- 
-          return(
-             <View>
-               
-                <View onClick={this.getCart} >ss</View>
-               </View>
+   const { cartData }=this.state
+     return(
+      <View>      
+         {
+         cartData.length>0?<View className='product_wrap'><Product cartData={cartData}/></View>:<noProduct cartData={cartData}/>
+         }
+      </View>
+              
            )
       }
   }

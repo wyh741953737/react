@@ -1,3 +1,0 @@
-<view class="container">
-<wux-badge count="{{num}}" wux-class-badge="pink_bdage"></wux-badge>
-</view>

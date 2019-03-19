@@ -1,3 +1,0 @@
-<view class="wux-class wux-badge">
-  <view class="wux-badge__count wux-class-badge">{{finalCount}}</view>
-</view>

@@ -74,7 +74,7 @@ export default class Products_item extends Component {
            >
             {
               mapSwiperArray.map((index) => (
-                <SwiperItem className="home-product_swiperitem">
+                <SwiperItem className="home-product_swiperitem" key={index}>
                   <Product  products={products}/>
                 </SwiperItem>
               ))

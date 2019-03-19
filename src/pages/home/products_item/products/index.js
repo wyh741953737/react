@@ -4,7 +4,6 @@ import { View, Text } from '@tarojs/components'
 import './index.css'
 export default class Product extends Component {
 
-
   static defaultProps = {
     products: []
   }
@@ -13,17 +12,12 @@ handlePrevent=()=>{
     title: '目前只可点击底部推荐商品',
     icon: 'none'
   })
- 
 }
   render() {
     const { products } = this.props
     return (
-      <View className='home-product'
-      onClick={this.handlePrevent}
-      >
-        {
-          products
-          .map((item, index) => (
+      <View className='home-product'  onClick={this.handlePrevent}   >
+        {  products.map((item, index) => (
             <View key={index} className='home-product_item'>
               <View className="pic">
                 <View className="home-product_img">

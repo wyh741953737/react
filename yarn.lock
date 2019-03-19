@@ -111,10 +111,10 @@
     swiper "^4.4.2"
     weui "^1.1.2"
 
-"@tarojs/plugin-babel@1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-babel/-/plugin-babel-1.2.13.tgz#94cce174c12c287dad24b21d11aca8e03a54cc2d"
-  integrity sha512-+sxDtv0Lm041t+aSez6ZcJlJnqrlcJPZy+9IC6ENREKhSmG/MIV8/hFqWBVpMmRruRqJ8DloDNzGE50T/Q7ymA==
+"@tarojs/plugin-babel@^1.2.20":
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-babel/-/plugin-babel-1.2.20.tgz#add3e24a926aed157f323455aa315cd061f2d3d1"
+  integrity sha512-QkZcXPV7A0jkF+my4ISqt18TVEJHVFrz2tJ0yAo5cTSIgwzstHYnvGBqwm9NvI/pt4DsNaPHqeBMT4wlEFPYhg==
   dependencies:
     babel-core "^6.26.0"
 
@@ -209,13 +209,13 @@
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-weapp@1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro-weapp/-/taro-weapp-1.2.13.tgz#11b9752eafbb1dcf02d6ab161c38d1a6c9c6f19b"
-  integrity sha512-Gobbo69Xati89JAc85hA0DD8xxbxleMD0mnR4Ou83J7xQpYPIqXNxP5xwWxDHiySiKmuFBcGlbydaQ984yBDPg==
+"@tarojs/taro-weapp@^1.2.20":
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro-weapp/-/taro-weapp-1.2.20.tgz#b4a61c488da748f0de4ed237b7faa513ee2ff6c5"
+  integrity sha512-WpdSOLQXZ8OOVSrrpIrZFK/wqqRhOTqBYmS7+f/vkzuEYFMW3bc0wcduZg/TFVi4QEZk0/Bi+b1yWSCzmC0RbA==
   dependencies:
-    "@tarojs/taro" "1.2.13"
-    "@tarojs/utils" "1.2.13"
+    "@tarojs/taro" "1.2.20"
+    "@tarojs/utils" "1.2.20"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
@@ -223,6 +223,11 @@
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-1.2.13.tgz#b77fd1d756f59f6596cde639f95aee7ef3745a47"
   integrity sha512-YppawvkF5E8YxGYFOvBikZRqCSnLW8Wvok4HRJwpz8Ob0VOljZARbw5SRNCVhaF0br3JTluv7IougDWz5z0WAA==
+
+"@tarojs/taro@1.2.20":
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-1.2.20.tgz#6d1017989f439236bd45b2ea023e407ab8474d24"
+  integrity sha512-RsApDGSHrT2D/raqJSlnnxFvqyLzdkrsOCj9KQNYtU5y2MOBHwLOeuYIHNGO2ZsA/+n4jZKls/34yr8pqdqt1A==
 
 "@tarojs/utils@1.2.13":
   version "1.2.13"
@@ -233,6 +238,11 @@
   version "1.2.15"
   resolved "https://registry.yarnpkg.com/@tarojs/utils/-/utils-1.2.15.tgz#d9aff7c0ae650f3b1129b5c65060c5914e69617a"
   integrity sha512-hS5HhKo1u/T/Hab42g9J5u/Z0+DS6ZzZDJZ/D3q3Sn57waRLCqvI2BqhFNUSySR3TC4foO+ZceChWogEKGoghw==
+
+"@tarojs/utils@1.2.20":
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/@tarojs/utils/-/utils-1.2.20.tgz#7af8274b724f719ee52538b16411faf2c52d22e5"
+  integrity sha512-tFOHUbgxRd/WYtDLGtRg73fmQU7KshHSGBsnZeH1Jtkmt8jJlkr30NrZEaSPB+nabiBVpWK2tpNVA2FI3vE2lw==
 
 "@tarojs/webpack-runner@1.2.13":
   version "1.2.13"

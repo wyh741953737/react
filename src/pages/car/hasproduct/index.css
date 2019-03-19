@@ -1,8 +1,10 @@
 .car_product{
     width: 100%;
     height: 300rpx;
-    /* background-color: pink; */
-
+}
+.wraps{
+    background-color: white;
+    margin-bottom: 15rpx;
 }
 .cat_product_detail{
     align-items: center;
@@ -14,12 +16,16 @@
    background-color: rgb(245, 244, 244);
     font-size: 26rpx;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
 }
 .box{
     width: 45rpx;
     height: 45rpx;
+    margin-left: 13rpx;
+  line-height: 45rpx;
+}
+.type-name{
+    margin-left: 10rpx;
 }
 .select_icon{
     max-width: 100%;
@@ -35,14 +41,12 @@
 .price_and_count{
     display: flex;
     height: 80rpx;
-    border: 1px solid red;
     align-items: center;  
 }
 .cat_product_price{
     color: red;
     font-weight: 300;
     font-size: 28rpx;
-    border:1px solid black;
     width: 130rpx;
 }
 .cat_product_button{
@@ -50,6 +54,7 @@
    margin-left: 145rpx;
 }
 .cat_product_title{
+    border: 1px solid red;
     font-size: 28rpx;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -61,9 +66,11 @@
     width: 50rpx;
     height: 50rpx;
     text-align: center;
+    line-height: 50rpx;
 }
 .number{
     width: 90rpx;
+    font-size: 24rpx;
 }
 .checkbox{
     border-radius: 50%;
@@ -74,8 +81,8 @@
 
 }
 .delete{
-    width: 40rpx;
-    height: 40rpx;
+    width: 35rpx;
+    height: 35rpx;
 margin-left: 420rpx;
 margin-top: 8rpx;
 }
