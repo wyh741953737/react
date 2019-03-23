@@ -15,10 +15,11 @@ wx.cloud.init({
 class App extends Component {
   config = {
     pages: [
-     
-      'pages/home/home', 
-      'pages/welcome/index',
       'pages/car/index',
+      'pages/home/home', 
+    
+      'pages/welcome/index',
+    
       'pages/add/index', 
       'pages/province/index',
       'pages/item/index',

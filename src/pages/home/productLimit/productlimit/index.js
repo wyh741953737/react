@@ -8,15 +8,15 @@ export default class Product extends Component {
   static defaultProps = {
     category: []
   }
-  // handlenaviga=(ev)=>{
-  //   var that=this;
-  //   var e=ev.currentTarget.dataset._id;
-  //   this.$preload('_id', ev.currentTarget.dataset._id)
-  //   console.log(e)
-  //   Taro.navigateTo({
-  //     url:`/pages/item/index`
-  //  })
-  // }
+  handlenaviga=(ev)=>{
+    var that=this;
+    var e=ev.currentTarget.dataset._id;
+    this.$preload('_id', ev.currentTarget.dataset._id)
+    console.log(e)
+    Taro.navigateTo({
+      url:`/pages/item/index`
+   })
+  }
   render() {
     const { category } = this.props
     return (
@@ -27,7 +27,7 @@ export default class Product extends Component {
           category
           .map((item, index) => (
         <View className='wrap'>
-              <View   key={index}  className='recommend-total_height' >
+              <View   key={index}  className='recommend-total_height' onClick={this.handlenaviga.bind(this)} data-_id={item._id}>
                     <View className="image-wrap"><Image className='recommend-img'  src={item.url}  /></View>       
                     <View className="recommend_price"> 
                              <View className="recommend-product_title"><Text className="recommend-title"  >{item.title}</Text></View>

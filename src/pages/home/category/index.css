@@ -1,5 +1,39 @@
-.tabs{
-    border: 1px solid red;
-    height: 100px;
-    background: #000;
-}
+.order-page {
+   height: 300rpx;
+  
+   margin-top: 25rpx;
+  }
+  .toggleType { 
+     width: 100%;
+    flex-wrap: wrap;
+      display: flex;
+
+      box-sizing: border-box;
+   }
+   .wrap{
+     width: 20%;
+     height: 140rpx;
+     margin-top: 20rpx; 
+  box-sizing: border-box;
+
+   }
+   .img-wrap{
+       width: 60%;
+       height: 80rpx;
+       margin: auto;
+   }
+   .img{
+       max-width: 100%;
+       max-height: 100%;
+   }
+    .item {
+        height: 60rpx;
+        line-height: 60rpx;
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
+        text-align: center;
+    }
+    
+   
+  

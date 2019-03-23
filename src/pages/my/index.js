@@ -5,13 +5,14 @@ import './index.css';
 import message_img from '../../assets/user/message.png';
 import avatar_img from '../../assets/user/avatar.png';
 import coupon_img from '../../assets/user/coupon.png';
-// import about_img from '../../assets/user/about.png';
+ import about_img from '../../assets/user/about.png';
 import address_img from '../../assets/user/address.png';
 import arrowRight from '../../pages/home/flash-sale/arrow-right.png'
-// @connect(({ users }) => ({
-//   ...users
-//   // ...common,
-// }))
+import allList from '../../assets/user/alllist.png'
+import pay from '../../assets/user/pay.png'
+import daifahuo from '../../assets/user/daifahuo.png'
+import gift from '../../assets/user/gift.png'
+import ping from '../../assets/user/ping.png'
 export default class User extends Component {
     constructor() {
         super(...arguments);
@@ -20,27 +21,27 @@ export default class User extends Component {
             {
               id: 0,
               name: '全部订单',
-              image:'../../assets/user/alllist.png'
+              image:allList
             },
             {
               id: 1,
               name: '待付款',
-              image:'../../assets/user/pay.png'
+              image:pay
             },
             {
               id: 2,
               name: '待发货',
-              image:'../../assets/user/daifahuo.png'
+              image:daifahuo
             },
             {
               id: 3,
               name: '待收货',
-              image:'../../assets/user/gift.png'
+              image:gift
             },
             {
               id: 4,
               name: '评价',
-              image:'../../assets/user/ping.png'
+              image:ping
             },
           ],
         

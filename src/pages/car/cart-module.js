@@ -3,7 +3,7 @@ import flashSale from '../../../dist/pages/home/flash-sale';
 
 export default class Cart extends Component {
  state={
-   isCollected:false,
+   status:false,
    coled:[]
 
  }
@@ -14,6 +14,7 @@ export default class Cart extends Component {
    
     if (isHasInfo === -1) { //如果购物车没有这样的商品，直接添加一条新纪录，数量为counts
       item.counts = counts; //这个商品的数量为count
+     
       cartData.push(item);
       Taro.showToast({
         title: '加购成功！',
@@ -35,7 +36,7 @@ export default class Cart extends Component {
     var res = Taro.getStorageSync('product') || [];
     return res;
   }
- colPro=(item)=>{
+ colPro=(item,isCollected)=>{
   const CollectData=this.getDataFromLocal()
   // console.log(CollectData)//输出三个商品所有数据
   const isCollect= CollectData.findIndex((likesCollect) => likesCollect._id=== item._id)
@@ -47,23 +48,17 @@ export default class Cart extends Component {
       icon: 'success',
       duration: 2000
     })
-    this.setState({
-      isCollected:true
-    })
+    
   }else{//收藏了，点击取消
     this.setState({
       isCollect:false
      })
+     Taro.removeStorageSync('likesCollect')
     Taro.showToast({
       title: '取消成功！',
       icon: 'success',
       duration: 2000
     })
-    var coll=item
-    coll=!coll
-  
-    // Taro.setStorageSync('likesCollect',CollectData)
-
   }
   Taro.setStorageSync('likesCollect',CollectData)
  }

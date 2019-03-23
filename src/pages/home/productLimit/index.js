@@ -126,15 +126,7 @@ time: '24:00',
       category:res.data
     })
   }
-  // handlenaviga=(ev)=>{
-  //   var that=this;
-  //   var e=ev.currentTarget.dataset._id;
-  //   this.$preload('_id', ev.currentTarget.dataset._id)
-  //   console.log(e)
-  //   Taro.navigateTo({
-  //     url:`/pages/item/index`
-  //  })
-  // }
+ 
   render() {
     const { productsTotal, currentIndex, lists,ids,category } = this.state;
     console.log(currentIndex)

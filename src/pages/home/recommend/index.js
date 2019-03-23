@@ -68,7 +68,16 @@ handleget=(res)=>{
     })
 
 }
+handlenaviga=(ev)=>{
+  var that=this;
+  var e=ev.currentTarget.dataset._id;
+  this.$preload('_id', ev.currentTarget.dataset._id)
+  console.log(e)
 
+  Taro.navigateTo({
+    url:`/pages/item/index`
+ })
+}
   render() {
     // if (!this.state.loaded) {
     //   return <Loading />
@@ -92,8 +101,9 @@ handleget=(res)=>{
           {category.map((item, index) => (
             <View
               key={index}
+              data-_id={item._id} 
               className='recommend-total_height'
-              onClick={this.handleClick.bind(this, item)}
+              onClick={this.handlenaviga}
             >
               <View className="image-wrap"><Image
                 className='recommend-img'

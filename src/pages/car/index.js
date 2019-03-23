@@ -17,8 +17,7 @@ state={
   this.setState({
       cartData:cartData
   })
-//   console.log(cartData)
-//   console.log(cartData.length)
+
 //    var countsInfo=cart.getCartTotalCounts(true);
 //    cal=this._calcTotalAccountAndCounts(data)
 //    this.setState({

@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "enablePullDownRefresh": true,
-  "navigationBarTitleText": "时尚新闻",
-  "navigationBarBackgroundColor": "#2DC799",
-  "usingComponents": {}
-}

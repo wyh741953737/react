@@ -5,9 +5,9 @@ import './index.css'
 
 export default class noProduct extends Component {
     gohomepage=()=>{
-        Taro.navigateTo({
-            url:  'pages/my/index', 
-        })
+        Taro.switchTab({
+            url: 'pages/home/home'
+            })
     }
     render(){
         return(

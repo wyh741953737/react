@@ -103,6 +103,7 @@ export default class Index extends Component {
         <View onClick={this.handlePrevent}>
           <Banner />
         </View>
+        <Category/>
         <FlashSale
         // data={TimeLimit.flashSale}
           />

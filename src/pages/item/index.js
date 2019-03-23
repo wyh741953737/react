@@ -5,6 +5,8 @@ import Cart from '../car/cart-module'
 import Share from '../../assets/user/share.png'
 import arrowRight from '../../pages/home/flash-sale/arrow-right.png'
 import Category from '../home/category';
+import selectimg from './image/select.png'
+import selectedimg from 'selected.png'
 const db = wx.cloud.database()
 const cart = new Cart();
 export default class Product_info extends Component {
@@ -17,8 +19,8 @@ export default class Product_info extends Component {
       current: 3,
       productCount: 1,
       category: [],
-      currentIndex: 0,
-     
+      currentIndex: 0, 
+      isSelected:false    
     }
   }
   componentWillMount() {
@@ -65,11 +67,14 @@ export default class Product_info extends Component {
     })
   }
   like = () => {
-    const { category } = this.state;
+    const { category ,isSelected } = this.state;
     // console.log(category)
     // console.log(category[0])//输出整条数据
     if(!category[0]) return false; 
-    cart.colPro(category[0])
+    this.setState({
+      isSelected:true
+    })
+    cart.colPro(category[0],isSelected)
 
   }
   render() {
@@ -109,7 +114,7 @@ export default class Product_info extends Component {
                 <View>购物车</View>
               </View>
               <View className='car' onClick={this.like}>
-                <Image className='home_icon' src='./image/select.png'></Image>
+                <Image className='home_icon' src={selectimg}></Image>
                 <View>收藏</View>
               </View>
               <View className='tocar' data-_id={item._id} onClick={this.navigategoodlist}>加入购物车</View>

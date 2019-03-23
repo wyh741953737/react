@@ -23,17 +23,16 @@ export default class Add extends Component {
             })
     }
     less=()=>{
-        if(this.state.productCount>1){
+     
             this.setState({
                 productCount:productCount--
             })
         }
-    }
     more=()=>{
-     const productCount=this.state.productCount++
-       this.setState({
-           productCount:productCount
-       })
+    productCount+=this.state.productCount
+     this.setState({
+         productCount:productCount
+     })
     }
     comfirm = () => {
         const { category, productCount } = this.state;
