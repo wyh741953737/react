@@ -6,23 +6,11 @@ const db = wx.cloud.database()
 export default class Recommends extends Component {
   state = {
     category: [],
-      loaded: false,
       loading: false,
      currentArray:[],
-      currentId:null,
       hasMore: true,
       size:5
     }
-  componentWillMount(){
-db.collection('category')
-.count()
-.then(res=>{
-  this.setState({
-    currentId:res.total
-  })
-})
-
-  }
     componentDidMount() {  
       db.collection('category')
      .limit(5)
@@ -34,18 +22,14 @@ db.collection('category')
       })
     })
     } 
-handleClick=(item)=>{
- Taro.navigateTo({
-   url:``
- })
-}
-loadproduct=(e)=>{
+
+loadproduct = (e) => {
   console.log(e)
-  const { currentId,category ,hasMore,currentArray}=this.state
+  const { category ,hasMore,currentArray}=this.state
   console.log(category)//5条数据
-  console.log(currentId)
+  //console.log(currentId)
   console.log(currentArray)
-  //undifiend
+  
 
   if(!this.state.hasMore || this.state.isloading)
   {
@@ -57,7 +41,6 @@ loadproduct=(e)=>{
 }
 handleget=(res)=>{
   db.collection('category')
- 
     .get()
     .then(res => {
       this.setState({
@@ -66,22 +49,16 @@ handleget=(res)=>{
         loading:false   
       })
     })
-
 }
 handlenaviga=(ev)=>{
   var that=this;
   var e=ev.currentTarget.dataset._id;
-  this.$preload('_id', ev.currentTarget.dataset._id)
-  console.log(e)
-
+  this.$preload('_id',e)
   Taro.navigateTo({
     url:`/pages/item/index`
  })
 }
   render() {
-    // if (!this.state.loaded) {
-    //   return <Loading />
-    // }
     const { category } = this.state;
     return (
   <View className='recommend-products-wrap'>
@@ -90,13 +67,9 @@ handlenaviga=(ev)=>{
      scrollY
      scrollWithAnimation
      scrollTop='0'
-    
-     lowerThreshold='40'
-     upperThreshold='20'
-     onScrolltoupper={this.onScrolltoupper}
+     lowerThreshold='30'
      onScrollToLower={this.loadproduct}
     >
-
     <View className="recommend-product">
           {category.map((item, index) => (
             <View

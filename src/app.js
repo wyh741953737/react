@@ -15,12 +15,13 @@ wx.cloud.init({
 class App extends Component {
   config = {
     pages: [
-      'pages/car/index',
       'pages/home/home', 
-    
+      'pages/car/index',
+      
+     
       'pages/welcome/index',
-    
-      'pages/add/index', 
+      'pages/message/index',
+      // 'pages/add/index', 
       'pages/province/index',
       'pages/item/index',
      'pages/home/productLimit/index',
@@ -51,7 +52,7 @@ class App extends Component {
         selectedIconPath: "./assets/tab-bar/pin-active.png",
         text: "拼团"
       },  {
-        pagePath: "pages/home/home",
+        pagePath: "pages/message/index",
         iconPath: "./assets/tab-bar/message.png",
         selectedIconPath: "./assets/tab-bar/message-active.png",
         text: "消息"

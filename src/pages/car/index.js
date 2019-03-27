@@ -1,22 +1,22 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
  import Product from './hasproduct/index'
  import noProduct from './noproduct/index'
-import Cart from './cart-module'
-
 import './index.css'
-import Category from '../home/category';
 
-const cart = new Cart();
 export default class Car extends Component {
 state={
     cartData:[]
 }
- componentWillMount(){
-  var cartData=Taro.getStorageSync('product')
-  this.setState({
-      cartData:cartData
-  })
+
+componentDidShow(){
+    var cartData=Taro.getStorageSync('product')
+    this.setState({
+        cartData:cartData
+    })
+}
+ componentDidMount(){
+    
 
 //    var countsInfo=cart.getCartTotalCounts(true);
 //    cal=this._calcTotalAccountAndCounts(data)
@@ -51,15 +51,15 @@ state={
 //         account:account / (multiple * multiple)
 //      }
 //       }
-//       componentDidMount(){
-  
-//     }
+
       render(){
    const { cartData }=this.state
      return(
       <View>      
          {
-         cartData.length>0?<View className='product_wrap'><Product cartData={cartData}/></View>:<noProduct cartData={cartData}/>
+         cartData.length>0?
+         <View className='product_wrap'><Product cartData={cartData}/></View>
+         :<noProduct cartData={cartData}/>
          }
       </View>
               

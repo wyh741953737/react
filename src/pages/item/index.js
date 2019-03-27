@@ -6,9 +6,10 @@ import Share from '../../assets/user/share.png'
 import arrowRight from '../../pages/home/flash-sale/arrow-right.png'
 import Category from '../home/category';
 import selectimg from './image/select.png'
-import selectedimg from 'selected.png'
+import selectedimg from './image/selected.png'
 const db = wx.cloud.database()
 const cart = new Cart();
+
 export default class Product_info extends Component {
   config = {
     navigationBarTitleText: '商品详情',
@@ -20,7 +21,10 @@ export default class Product_info extends Component {
       productCount: 1,
       category: [],
       currentIndex: 0, 
-      isSelected:false    
+      isSelected:false ,
+      isClicked:false ,
+       productCount: 1,
+       likeCollect:[]
     }
   }
   componentWillMount() {
@@ -60,30 +64,89 @@ export default class Product_info extends Component {
     })
   }
   navigategoodlist = (ev) => {
-    var e = ev.currentTarget.dataset._id;
-    this.$preload('_id', e)
-    Taro.navigateTo({
-      url: '../add/index'
+    // var e = ev.currentTarget.dataset._id;
+    // this.$preload('_id', e)
+    // Taro.navigateTo({
+    //   url: '../add/index'
+    // })
+    this.setState({
+      isClicked:true
     })
   }
   like = () => {
-    const { category ,isSelected } = this.state;
-    // console.log(category)
-    // console.log(category[0])//输出整条数据
+    const { category} = this.state;
     if(!category[0]) return false; 
-    this.setState({
-      isSelected:true
-    })
-    cart.colPro(category[0],isSelected)
-
+    cart.colPro(category[0])
   }
+
+  comfirm = () => {
+    const { category, productCount } = this.state;
+    if(!category[0]) return false; 
+     cart.add(category[0], productCount)
+     this.setState({
+      isClicked:false
+     })
+}
+componentDidMount(){
+  var likeCollect=Taro.getStorageSync('likesCollect')
+  var likecollect=''
+  var id=this.$router.preload._id
+  for(let i=0;i<likeCollect.length;i++){
+    if(likeCollect[i]._id==id){
+     likecollect=likeCollect[i].isCollected
+    }
+  this.setState({
+    likeCollect:likecollect
+  })
+}
+}
+shouldComponentUpdate(nextState){
+  if(nextState.likeCollect == this.state.likeCollect){
+    return false
+  }
+}
+componentWillReceiveProps(nextProps) { 
+  console.log("打印nextProps")
+  console.log(nextProps)
+  
+  // this.setState({ likeCollect: nextProps.contentInformation.content_title});
+}
+
   render() {
-    const { category } = this.state;
+    const { category,likeCollect } = this.state;
     return (
       <View>
 
         {category.map((item, index) => (
           <View className='home-banner'>
+          {isClicked? <View className='seeable'>
+      {/* <View className="opacitys"></View> */}
+         <View className='wrap' >
+
+             <View className='pic'>
+                 <View className='image'><Image className='image-url' src={item.url} /></View>
+                 <View className='price-wrap-container'>
+                     <View className='price-wraps'><Text className='prict_wrap'>{item.price}</Text></View>
+                     <View className='price-counts'> <Text>库{item.product_info.inventory}件</Text> </View>
+                     <View className='price-chose'> <Text>选择颜色数量</Text> </View>
+                 </View>
+             </View>
+             <View className='color_and_count'>
+                 <View> <Text className='color'>已经选择  {this.state.productCount} 件</Text></View>
+             </View>
+             <View className='count'>
+                 <View className='count_text'>购买数量</View>
+                 <View className='count_button'>
+                     <View className='count_click' onClick={this.less} >-</View>
+                     <View className='count_click number'> {this.state.productCount}</View>
+                     <View className='count_click'  onClick={this.more}>+</View>
+                 </View>
+             </View>
+             <View className='comfirm-wrap'>  <View className='count_comfirm' onClick={this.comfirm}>确定</View></View>
+         </View>
+     {/* ))} */}
+ </View>
+:''}
             <Swiper
               className='home-banner__swiper'
               circular
@@ -101,8 +164,9 @@ export default class Product_info extends Component {
                 <Image className='home-banner__swiper-item-img' src={item.product_info.info3} />
               </SwiperItem>
             </Swiper>
-
-
+            <View >
+      </View>
+      
             <View className='tabbar'>
               <View className='home' onClick={this.navigatehome}>
                 <Image className='home_icon' src='../../assets/tab-bar/home.png'></Image>
@@ -114,7 +178,7 @@ export default class Product_info extends Component {
                 <View>购物车</View>
               </View>
               <View className='car' onClick={this.like}>
-                <Image className='home_icon' src={selectimg}></Image>
+              <Image className='home_icon' src={this.state.likeCollect?selectedimg :selectimg}/>
                 <View>收藏</View>
               </View>
               <View className='tocar' data-_id={item._id} onClick={this.navigategoodlist}>加入购物车</View>

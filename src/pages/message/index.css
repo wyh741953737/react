@@ -1,8 +1,46 @@
+
+.seeable{
+    width: 100vw;
+    height: 100vh;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+    z-index: 1000;
+
+    animation:mymove 0.2s;
+	-webkit-animation:mymove 0.2s;
+	-webkit-animation-iteration-count:1;
+	-webkit-animation-fill-mode:forwards;
+}
+@keyframes mymove
+{
+0%  { top:0;top: 100vh}
+100% { top:100vh;top:0}
+}
+ @-webkit-keyframes myfirst /* Safari and Chrome */
+{
+    0%  { top:0;top: 100vh}
+100% { top:100vh;top:0}  
+}
+
+.ddd{
+    height: 30vh;
+    width: 100%;
+    background-color: rgb(26, 25, 25);
+    opacity: 0.1;
+}
+.clicked-show{
+    height: 70vh;
+    width: 100vw;
+    border-radius: 25px 25px 0 0;
+   background-color: #fff;
+border: 1px solid red;
+ 
+}
 .wrap{
     width: 100%;
     height: 770rpx;
-    z-index: 1000;
-    border: 1px solid red;
+   
+    border:1px solid black;
     bottom: 0;
     position:absolute;
     box-sizing: border-box;
@@ -38,16 +76,11 @@
     color: red;
 }
 .price-count{
-  
     font-size: 30rpx;
     color: grey;
 }
 .price-chose{
-  
     font-size: 30rpx;
-}
-.color_and_count{
-
 }
 .color{
     margin: 20rpx;
@@ -63,7 +96,7 @@
 }
 .count_button{
     display: flex;
-    border:1px solid red;
+    border:1px solid pink;
     width: 200rpx;
     text-align: center;
     box-sizing: border-box;
@@ -87,16 +120,17 @@
     text-align: center;
    line-height: 90rpx;
     
-   
+  
 }
 .comfirm-wrap{
     height: 110rpx;
-    background-color: rgb(255, 251, 251);
-    z-index: 1200;
+    /* background-color: rgb(255, 251, 251); */
+    border: 1px solid red;
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: -90rpx; */
     align-items: center;
     display: flex;
     justify-content: center;
+    
 }

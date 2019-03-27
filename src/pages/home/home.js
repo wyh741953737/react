@@ -24,7 +24,6 @@ export default class Index extends Component {
     hasmore:true
   }
 
-  componentWillMount() { }
   componentDidMount() {
     const db = wx.cloud.database()
     const homeImages = db.collection('home_images')
@@ -69,10 +68,6 @@ export default class Index extends Component {
 // }
 
 
-
-  componentWillUnmount() { }
-  componentDidShow() { }
-  componentDidHide() { }
   handlePrevent = () => {
 
   }

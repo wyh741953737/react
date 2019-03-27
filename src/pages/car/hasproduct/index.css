@@ -19,17 +19,11 @@
     align-items: center;
 }
 .box{
-    width: 45rpx;
-    height: 45rpx;
-    margin-left: 13rpx;
+  margin-left: 13rpx;
   line-height: 45rpx;
 }
 .type-name{
     margin-left: 10rpx;
-}
-.select_icon{
-    max-width: 100%;
-    max-height: 100%;
 }
 .cat_product_detail{
     display: flex;

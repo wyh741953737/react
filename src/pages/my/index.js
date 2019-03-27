@@ -1,6 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Image, Text, Icon } from '@tarojs/components';
-// import { connect } from '@tarojs/redux';
 import './index.css';
 import message_img from '../../assets/user/message.png';
 import avatar_img from '../../assets/user/avatar.png';
@@ -17,6 +16,8 @@ export default class User extends Component {
     constructor() {
         super(...arguments);
         this.state = {
+          avatarUrl:'',
+          nickName:'',
           orderType: [
             {
               id: 0,
@@ -63,8 +64,15 @@ export default class User extends Component {
       url:'../order_list/index?id='+id
     })
   }
+  componentDidMount(){
+    let userInfo =  Taro.getStorageSync('userInfo')
+    this.setState({
+      avatarUrl:userInfo.avatarUrl,
+      nickName:userInfo.nickName
+    })
+  }
 render(){
-    const { orderType, activeTypeIndex } = this.state;
+    const { orderType, activeTypeIndex,avatarUrl,nickName } = this.state;
     return(
  <View className="user-page">
          <View className="not-login">
@@ -72,10 +80,10 @@ render(){
                             className="to-login">        
                             
                                 <View className="avator_image">
-                                    <Image className="avator_image_avator" src="../../assets/user/tou.png"/>
+                                    <Image className="avator_image_avator" src={this.state.avatarUrl}/>
                                 </View>
                                 <View className="right">
-                                    <View className="right_username">用户名</View>
+                                    <View className="right_username">用户名{nickName}</View>
                                     <View className="right_usertype">微信账号</View>
                                 </View>
                             

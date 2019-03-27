@@ -1,3 +1,129 @@
+.seeable{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    visibility: visible;
+    animation:mymove 0.2s;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+    z-index: 10000;
+	-webkit-animation:mymove 0.2s;
+	-webkit-animation-iteration-count:1;
+	-webkit-animation-fill-mode:forwards;
+}
+@keyframes mymove
+{
+0%  { top:0;top: 100vh}
+100% { top:100vh;top:0}
+}
+ @-webkit-keyframes myfirst 
+{
+    0%  { top:0;top: 100vh}
+100% { top:100vh;top:0}  
+}
+/* .opacitys{
+    height: 30vh;
+    opacity: 0.2;
+    background-color: #fff;
+} */
+.wrap{
+    width: 100%;
+    height: 70vh;
+    z-index: 1000;
+    background-color: #fff;
+    bottom: 0;
+    position:absolute;
+    box-sizing: border-box;
+}
+.pic{
+    display: flex;
+}
+.image{
+    width: 300rpx;
+    height: 300rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+    margin: 30rpx;
+}
+.image-url{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10rpx;
+}
+.price-wrap-container{
+    height: 300rpx;
+    width: 400rpx;
+}
+
+ .price-wraps{
+    height: 120rpx;
+    font-size: 38rpx;
+    line-height: 150rpx;
+    color: red;
+}
+.price-counts{
+    font-size: 30rpx;
+    color: grey;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+.price-chose{
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 30rpx;
+} 
+
+.color{
+    margin: 20rpx;
+    font-size: 30rpx;
+    height: 60rpx;
+    line-height: 60rpx;    
+}
+.count{
+    display: flex;
+   
+    font-size: 28rpx;
+    margin: 20rpx;
+}
+.count_button{
+    display: flex;
+    width: 200rpx;
+    text-align: center;
+    box-sizing: border-box;
+  margin-left: 360rpx;
+}
+.count_click{
+    width: 60rpx;
+    height: 40rpx;
+    border: 1px solid white;
+    background-color: rgb(228, 228, 228);
+}
+.number{
+    width: 80rpx;
+}
+.count_comfirm{
+    background-color: rgb(236, 95, 59);
+    color: white;
+    height: 90rpx;
+    width: 90%;
+    border-radius: 90rpx;
+    text-align: center;
+   line-height: 90rpx;
+   
+}
+.comfirm-wrap{
+    height: 110rpx;
+    background-color: rgb(255, 251, 251);
+    z-index: 1200;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
 
 .home-banner{
     height: 600rpx;
